@@ -57,7 +57,63 @@
     </tr>
   </tbody>
 </table>
+<br>
+<form action="/cadastro/" method="post">
+  
+  Login: <input type="text" name="login" placeholder="Digite seu login">
+  Senha: <input type="password" name="senha">
 
+  <input type="radio" name="sexo" value="1" checked> Masculino
+  <input type="radio" name="sexo" value="2" checked> Feminino
+
+  <input type="checkbox" name="veiculo1" value="bike" checked> Eu tenho uma bike
+  <input type="checkbox" name="veiculo2" value="carro" checked> Eu tenho um carro
+
+  Curso: 
+  <select name="curso">
+
+    <option value="1">Ciência da Computação</option>
+    <option value="2">Direito</option>
+    <option value="3">Engenharia Elétrica</option>
+    <option value="4">Medicina</option>
+
+  </select>
+
+  Mensagem: <textarea name="message" rows="10" cols="30"></textarea>
+  Idade: <input type="number" name="idade" min="0" max="100" step="1" value="30"> 
+  Data de Nascimento: <input type="date" name="data_nascimento" min="2000-01-02">
+
+  Auto complete: <input list="cheeses">
+  <datalist id="cheeses">
+    <option>Camember</option>
+    <option>Cheddar</option>
+    <option>Chèvre</option>
+    <option>Cotija</option>
+    <option>Emmental</option>
+    <option>Feta</option>
+    <option>Bosta</option>
+    <option>qualquer</option>
+    <option>oi</option>
+    <option>lala</option>
+    <option>okoko</option>
+  </datalist>
+
+  <input type="hidden" name="country" value="Brasil">
+
+  <input type="reset" name="Limpar">
+  <input type="submit" name="Enviar">
+
+  <button type="button" onclick="alert('Hello World!')">Botao 01</button>
+
+  <button type="button" onclick="soma(5,10);"> 
+  Botao 02
+  </button>
+</form>
+  <div id="area-mensagens">
+    Elementos de bloco
+  </div>
+
+  Elements <span class="destaque"> de </span> linha <span class="destaque"> chique </span>
 
 
 
