@@ -1,12 +1,21 @@
 # -*- coding: utf-8 -*-
-from django.views.generic import View
-from django.shortcuts import render
-class VeiculosList(View):
+from django.views.generic import ListView, CreateView
+from django.core.urlresolvers import reverse_lazy
+from veiculos.models import *
+
+class VeiculosList(ListView):
    """
    View para listar veiculos cadastrados.
    """
-   def get(self, request):
-      context = {
-         'object_list': Veiculo.objects.all().order_by('marca')
-      }
-      return render(request, 'veiculos/listar.html', context)
+   model = Veiculo
+   template_name = 'veiculos/listar.html'
+
+class VeiculosNew(CreateView):
+    """
+    View para criação de novos veiculos.
+    """
+    model = Veiculo
+    form_class = FormularioVeiculo
+    template_name = 'veiculos/novo.html'
+    success_url = reverse_lazy('listar-veiculos')
+    
